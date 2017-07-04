@@ -1,6 +1,8 @@
+# rubocop: disable Metrics/ModuleLength, Metrics/BlockLength
 require 'rails_helper'
 
 module Abuse
+  # Abuse module
   describe Score, type: :model do
     let(:score) { create :score }
     let(:scores) { create_list :score, 10 }
@@ -87,13 +89,13 @@ module Abuse
       scores_2_days_ago
       expect do
         Score.clean_scores 1.day
-      end.to(change { Score.count }.from(15).to(5))
+      end.to(change { Score.count }.from(20).to(10))
     end
 
     it 'clears points for an IP' do
       scores
       scores_ip2
-      Scores.reset '1.1.1.1'
+      Score.reset '1.1.1.1'
       expect(
         Score.get_points('1.1.1.1')
       ).to eq []

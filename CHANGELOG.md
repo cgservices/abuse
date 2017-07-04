@@ -52,3 +52,4 @@
 ## 0.0.1 (unreleased)
   - [E] Added README
   - [E] Added CHANGELOG
+  - [F] Added Abuse methods + rspecs

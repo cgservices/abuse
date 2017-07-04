@@ -20,7 +20,7 @@ module Abuse
           .pluck(:points)
       end
 
-      def get_cumulative_points(ip, timespan=nil)
+      def get_cumulative_points(ip, timespan = nil)
         timespan ||= @default_timespan
         Score
           .where(ip: ip)
@@ -28,10 +28,9 @@ module Abuse
           .sum(:points)
       end
 
-      def clean_scores(timespan=nil)
+      def clean_scores(timespan = nil)
         timespan ||= @default_timespan
         Score
-          .where(ip: ip)
           .where('created_at > ?', Time.zone.now - timespan.to_i)
           .destroy_all
       end
