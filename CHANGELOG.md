@@ -49,7 +49,9 @@
 #
 ################################################################################
 --->
-## 0.0.1 (unreleased)
+## 0.0.2 (unreleased)
+
+## 0.0.1 04/07/2017
   - [E] Added README
   - [E] Added CHANGELOG
   - [F] Added Abuse methods + rspecs
